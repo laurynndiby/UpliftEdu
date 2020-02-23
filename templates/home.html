@@ -3,34 +3,27 @@
 {% block body %}
 <div class="content">
     <h1 style="text-align: center">Requests</h1>
-    {% if tasks|length < 1 %}
-    <h4 style="text-align: center">You have no active requests!</h4>
-    {% else %}
     <table>
         <tr>
-            <th>Task</th>
-            <th>Added</th>
-            <th>Actions</th>
+            <th>Name</th>
+            <th>School</th>
+            <th>Amount</th>
         </tr>
-        {% for task in tasks %}
             <tr>
-                <td>{{ task.content }}</td>
-                <td>{{ task.date_created.date() }}</td>
+                <td></td>
+                <td></td>
                 <td>
-                    <a href="/delete/{{task.id}}">Delete</a>
+                    <!--<a href="">Delete</a>
                     <br>
-                    <a href="/update/{{task.id}}">Update</a>
+                    <a href="">Update</a> -->
                 </td>
             </tr>
-        {% endfor %}
     </table>
-    {% endif %}
-
-    <div class="form">
-        <form action="/" method="POST">
-            <input type="text" name="content" id="content">
-            <input type="submit" value="Add Task">
-        </form>
-    </div>
+    <form action="/" method="POST">
+        <input type="text" name="name" id="name">
+        <input type="text" name="school" id="school">
+        <input type="number" name="amount" id="amount">
+        <input type="submit" value="Add Request">
+    </form>
 </div>
 {% endblock %}
